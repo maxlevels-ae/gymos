@@ -1,0 +1,19 @@
+{
+  "name": "scheduling",
+  "version": "1.0.0",
+  "description": "Class scheduling, PT appointments, bookings, waitlists, and capacity management",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["members","trainers","branches"],
+  "permissions": ["schedule.view","schedule.manage","bookings.view","bookings.manage"],
+  "menu": [
+    { "label": "Schedule", "labelAr": "الجدول", "icon": "calendar", "path": "/schedule", "order": 25, "permission": "schedule.view" }
+  ],
+  "widgets": [
+    { "id": "today-classes", "label": "Today's Classes", "labelAr": "فصول اليوم", "type": "stat", "statKey": "todayClasses", "order": 9 },
+    { "id": "upcoming-bookings", "label": "Bookings Today", "labelAr": "الحجوزات", "type": "stat", "statKey": "todayBookings", "order": 10 }
+  ],
+  "profileTabs": [
+    { "id": "bookings", "label": "Bookings", "labelAr": "الحجوزات", "order": 4 }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "Smart workflow automation — rule-based alerts and actions (subscription expiry reminders, inactivity, birthdays, weekly reports) delivered via WhatsApp, SMS, or in-app notifications.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["members", "memberships", "member-app"],
+  "permissions": [
+    "automation.view",
+    "automation.manage"
+  ],
+  "menu": [
+    {
+      "label": "Automation",
+      "labelAr": "الأتمتة والتنبيهات",
+      "icon": "puzzle",
+      "path": "/automation",
+      "order": 55,
+      "permission": "automation.view"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "attendance",
+  "version": "2.0.0",
+  "description": "QR check-in, front-desk mode, occupancy tracking, heatmaps",
+  "author": "GymOS Core",
+  "core": true,
+  "dependencies": ["members"],
+  "permissions": ["attendance.view","attendance.checkin","attendance.manage"],
+  "menu": [
+    { "label": "Check-In", "labelAr": "تسجيل الحضور", "icon": "scan-line", "path": "/attendance", "order": 15, "permission": "attendance.checkin" }
+  ],
+  "widgets": [
+    { "id": "today-checkins", "label": "Today Check-ins", "labelAr": "حضور اليوم", "type": "stat", "statKey": "todayCheckins", "order": 7 },
+    { "id": "currently-in", "label": "In Gym Now", "labelAr": "في الجيم الآن", "type": "stat", "statKey": "currentlyInGym", "order": 8 }
+  ],
+  "profileTabs": [
+    { "id": "attendance", "label": "Attendance", "labelAr": "الحضور", "order": 3 }
+  ]
+}

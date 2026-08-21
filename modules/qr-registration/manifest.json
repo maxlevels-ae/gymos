@@ -1,0 +1,93 @@
+{
+  "name": "qr-registration",
+  "version": "1.3.0",
+  "description": "QR registration queue with two-stage WhatsApp onboarding and admin approval workflow",
+  "author": "OpenAI",
+  "core": false,
+  "dependencies": [
+    "members",
+    "marketing"
+  ],
+  "permissions": [
+    "qr_registration.view",
+    "qr_registration.approve",
+    "qr_registration.reject",
+    "qr_registration.settings"
+  ],
+  "menu": [
+    {
+      "label": "QR Registrations",
+      "labelAr": "تسجيلات QR",
+      "icon": "scan-line",
+      "path": "/qr-registrations",
+      "order": 12,
+      "permission": "qr_registration.view",
+      "badgeEndpoint": "/api/qr-register/pending-count",
+      "badgeField": "count"
+    }
+  ],
+  "settingsSections": [
+    {
+      "id": "qr-registration-settings",
+      "tab": "modules",
+      "module": "qr-registration",
+      "title": "QR Registration",
+      "titleAr": "تسجيل QR",
+      "description": "Public QR onboarding settings. Gym name and logo are taken automatically from General application settings.",
+      "descriptionAr": "إعدادات التسجيل العام عبر QR. اسم النادي والشعار يتم سحبهما تلقائياً من إعدادات التطبيق العامة.",
+      "order": 210,
+      "fields": [
+        {
+          "key": "qr_registration.enabled",
+          "type": "toggle",
+          "label": "Enable Public QR Registration",
+          "labelAr": "تفعيل التسجيل العام عبر QR"
+        },
+        {
+          "key": "qr_registration._registration_qr",
+          "type": "qr-link",
+          "urlPath": "/qr-register",
+          "downloadName": "registration-qr",
+          "label": "Registration QR Code",
+          "labelAr": "رمز QR للتسجيل"
+        },
+        {
+          "key": "qr_registration.pwa_link",
+          "type": "text",
+          "label": "Member App Link",
+          "labelAr": "رابط تطبيق الأعضاء"
+        },
+        {
+          "key": "qr_registration.ios_video_link",
+          "type": "text",
+          "label": "iPhone Install Video Link",
+          "labelAr": "رابط فيديو تثبيت iPhone"
+        },
+        {
+          "key": "qr_registration.android_video_link",
+          "type": "text",
+          "label": "Android Install Video Link",
+          "labelAr": "رابط فيديو تثبيت Android"
+        },
+        {
+          "key": "qr_registration.rate_limit_per_hour",
+          "type": "number",
+          "label": "Rate Limit Per Hour",
+          "labelAr": "عدد المحاولات المسموح بها لكل ساعة"
+        },
+        {
+          "key": "qr_registration.whatsapp_template_registration",
+          "type": "textarea",
+          "label": "Registration Received Template",
+          "labelAr": "قالب استلام التسجيل"
+        },
+        {
+          "key": "qr_registration.whatsapp_template_approval",
+          "type": "textarea",
+          "label": "Approval Template",
+          "labelAr": "قالب الموافقة"
+        }
+      ]
+    }
+  ]
+}

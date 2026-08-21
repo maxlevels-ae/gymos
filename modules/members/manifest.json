@@ -1,0 +1,28 @@
+{
+  "name": "members",
+  "version": "2.0.0",
+  "description": "Member registration, profiles, lifecycle, QR identity, and alerts",
+  "author": "GymOS Core",
+  "core": true,
+  "dependencies": ["branches"],
+  "permissions": ["members.view","members.create","members.edit","members.delete","members.export"],
+  "menu": [
+    { "label": "Members", "labelAr": "الأعضاء", "icon": "users", "path": "/members", "order": 10, "permission": "members.view" }
+  ],
+  "widgets": [
+    { "id": "members-count", "label": "Total Members", "labelAr": "إجمالي الأعضاء", "type": "stat", "statKey": "totalMembers", "order": 1 },
+    { "id": "members-active", "label": "Active Members", "labelAr": "الأعضاء النشطون", "type": "stat", "statKey": "activeMembers", "order": 2 },
+    { "id": "members-new", "label": "New This Month", "labelAr": "أعضاء جدد", "type": "stat", "statKey": "newMembersThisMonth", "order": 3 }
+  ],
+  "profileTabs": [
+    { "id": "overview", "label": "Overview", "labelAr": "نظرة عامة", "order": 1 },
+    { "id": "memberships", "label": "Memberships", "labelAr": "الاشتراكات", "order": 2 },
+    { "id": "attendance", "label": "Attendance", "labelAr": "الحضور", "order": 3 },
+    { "id": "timeline", "label": "Timeline", "labelAr": "النشاط", "order": 5 }
+  ],
+  "quickActions": [
+    { "id": "checkin-member", "label": "Check In", "labelAr": "تسجيل حضور", "icon": "scan-line", "action": "checkin" },
+    { "id": "new-membership", "label": "New Membership", "labelAr": "اشتراك جديد", "icon": "credit-card", "action": "newMembership" },
+    { "id": "freeze-member", "label": "Freeze", "labelAr": "تجميد", "icon": "snowflake", "action": "freeze" }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "purchase",
+  "version": "1.0.0",
+  "description": "GymOS Purchase Order module — Odoo-style PO workspace with RFQ, PO confirm, receive, and vendor bill creation. Top header navigation.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["branches"],
+  "permissions": [
+    "purchase.view",
+    "purchase.create",
+    "purchase.confirm",
+    "purchase.receive",
+    "purchase.cancel",
+    "purchase.manage_vendors",
+    "purchase.manage_products",
+    "purchase.manage_settings",
+    "purchase.view_reports"
+  ],
+  "menu": [
+    {
+      "label": "Purchase",
+      "labelAr": "المشتريات",
+      "icon": "package",
+      "path": "/purchase",
+      "order": 65,
+      "permission": "purchase.view"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "purchase-rfq-count",
+      "label": "RFQs to Process",
+      "labelAr": "طلبات عروض الأسعار",
+      "type": "stat",
+      "statKey": "purchaseRfqCount",
+      "order": 40
+    },
+    {
+      "id": "purchase-po-count",
+      "label": "Purchase Orders",
+      "labelAr": "أوامر الشراء",
+      "type": "stat",
+      "statKey": "purchasePoCount",
+      "order": 41
+    },
+    {
+      "id": "purchase-mtd-spend",
+      "label": "MTD Spend",
+      "labelAr": "مصروفات الشهر",
+      "type": "stat",
+      "statKey": "purchaseMtdSpend",
+      "order": 42,
+      "format": "currency"
+    }
+  ],
+  "settingsSections": [
+    {
+      "id": "purchase-general",
+      "tab": "modules",
+      "title": "Purchase Settings",
+      "titleAr": "إعدادات المشتريات",
+      "description": "Purchase order numbering, approval workflow, and default tax settings.",
+      "descriptionAr": "ترقيم أوامر الشراء وسير الموافقة والإعدادات الافتراضية للضريبة.",
+      "order": 160,
+      "fields": [
+        { "key": "purchase.po_prefix",           "type": "text",   "label": "PO Number Prefix",            "labelAr": "بادئة رقم أمر الشراء" },
+        { "key": "purchase.rfq_prefix",          "type": "text",   "label": "RFQ Number Prefix",           "labelAr": "بادئة رقم طلب عرض السعر" },
+        { "key": "purchase.default_currency",    "type": "text",   "label": "Default Currency",            "labelAr": "العملة الافتراضية" },
+        { "key": "purchase.require_approval",    "type": "toggle", "label": "Require PO Approval",         "labelAr": "طلب موافقة على أوامر الشراء" },
+        { "key": "purchase.approval_min_amount", "type": "text",   "label": "Approval Threshold Amount",   "labelAr": "حد مبلغ الموافقة" },
+        { "key": "purchase.default_lead_days",   "type": "text",   "label": "Default Lead Time (days)",    "labelAr": "وقت الاستجابة الافتراضي (أيام)" },
+        { "key": "purchase.auto_create_bill",    "type": "toggle", "label": "Auto-create Bill on Receipt", "labelAr": "إنشاء فاتورة تلقائياً عند الاستلام" },
+        { "key": "purchase.lock_confirmed_po",   "type": "toggle", "label": "Lock Confirmed PO",           "labelAr": "قفل أوامر الشراء المؤكدة" }
+      ]
+    }
+  ]
+}

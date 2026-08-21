@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Secrets / local env
+.env
+.env.local
+.env.*.local
+
+# Runtime data (uploads, backups) — gym.db is tracked intentionally
+data/uploads/
+data/backups/
+tmp/
+
+# Logs
+*.log
+stderr.log
+logs/
+
+# Design handoff bundles
+design_handoff_gram_gym_admin/
+design_handoff_gram_gym_pwa/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

@@ -1,0 +1,62 @@
+{
+  "name": "training",
+  "version": "1.0.0",
+  "description": "GymOS Training — Odoo-style workspace. Member onboarding (birthday + experience level), auto-assign training programs with exercise videos and images. Categories, exercises library, programs, progress tracking.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["members", "memberships"],
+  "permissions": [
+    "training.view",
+    "training.manage",
+    "training.settings.manage"
+  ],
+  "menu": [
+    {
+      "label": "Training",
+      "labelAr": "التدريب",
+      "icon": "dumbbell",
+      "path": "/training",
+      "order": 30,
+      "permission": "training.view"
+    }
+  ],
+  "widgets": [
+    { "id": "training-enrolled", "label": "Training Enrolled", "labelAr": "مسجلون بالتدريب", "type": "stat", "statKey": "trainingEnrolled", "order": 50 },
+    { "id": "training-exercises", "label": "Exercises", "labelAr": "التمارين", "type": "stat", "statKey": "trainingExercises", "order": 51 },
+    { "id": "training-progress", "label": "Progress Today", "labelAr": "تقدم اليوم", "type": "stat", "statKey": "trainingProgressToday", "order": 52 }
+  ],
+  "profileTabs": [
+    { "id": "training", "label": "Training", "labelAr": "التدريب", "order": 8 }
+  ],
+  "settingsSections": [
+    {
+      "id": "training-settings",
+      "tab": "modules",
+      "title": "Training",
+      "titleAr": "التدريب",
+      "description": "Auto-assign programs and default fitness goals.",
+      "descriptionAr": "تعيين البرامج تلقائياً وأهداف اللياقة الافتراضية.",
+      "order": 190,
+      "fields": [
+        {
+          "key": "training.auto_assign_program",
+          "type": "toggle",
+          "label": "Auto-assign program on onboarding",
+          "labelAr": "تعيين برنامج تلقائياً عند التسجيل"
+        },
+        {
+          "key": "training.default_goal",
+          "type": "select",
+          "label": "Default Fitness Goal",
+          "labelAr": "هدف اللياقة الافتراضي",
+          "options": [
+            { "value": "general", "label": "General Fitness", "labelAr": "لياقة عامة" },
+            { "value": "muscle", "label": "Muscle Building", "labelAr": "بناء عضلات" },
+            { "value": "weight_loss", "label": "Weight Loss", "labelAr": "خسارة وزن" },
+            { "value": "bodybuilding", "label": "Bodybuilding", "labelAr": "بناء أجسام" }
+          ]
+        }
+      ]
+    }
+  ]
+}

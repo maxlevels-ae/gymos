@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#e8f0f8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Member Portal</title>
+<link rel="manifest" href="/api/pwa/manifest/member">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=5">
+<style>
+  /* ===== GRAMS GYM cold-start splash (dark, one-shot) ===== */
+  #gy-splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;direction:ltr;
+    background:radial-gradient(120% 90% at 50% 42%,#131313 0%,#060607 72%);
+    transition:opacity .5s ease;font-family:"Saira Condensed","Arial Narrow",system-ui,sans-serif}
+  #gy-splash.gy-hide{opacity:0;pointer-events:none}
+  #gy-splash .gy-lockup{display:flex;flex-direction:column;align-items:center;gap:16px}
+  #gy-splash .gy-mark{position:relative;display:flex;align-items:center;justify-content:center}
+  #gy-splash .gy-g{width:104px;height:108px;overflow:visible}
+  #gy-splash .gy-g path{fill:none;stroke:url(#gySilver);stroke-width:20;stroke-linejoin:miter;
+    stroke-miterlimit:6;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
+  #gy-splash .gy-gL{transform:translateX(-170px) rotate(-14deg);opacity:0}
+  #gy-splash .gy-gR{margin-left:-20px;transform:translateX(170px) rotate(14deg);opacity:0}
+  #gy-splash .gy-flash{position:absolute;left:50%;top:50%;width:200px;height:200px;margin:-100px 0 0 -100px;
+    border-radius:50%;background:radial-gradient(closest-side,rgba(240,121,44,.9),rgba(240,121,44,.35) 45%,transparent 70%);
+    opacity:0;transform:scale(.2);pointer-events:none;mix-blend-mode:screen}
+  #gy-splash .gy-shock{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;
+    border:3px solid rgba(240,121,44,.85);border-radius:50%;opacity:0;transform:scale(.3);pointer-events:none}
+  #gy-splash .gy-word{display:flex;align-items:baseline;gap:12px;font-weight:800;font-size:46px;
+    letter-spacing:3px;line-height:.9}
+  #gy-splash .gy-w{opacity:0;transform:translateY(18px);filter:blur(10px)}
+  #gy-splash .gy-grams{color:#f0792c;text-shadow:0 0 24px rgba(240,121,44,.45)}
+  #gy-splash .gy-gym{color:#f4f4f5}
+  #gy-splash .gy-uline{width:200px;height:3px;border-radius:3px;
+    background:linear-gradient(90deg,#f0792c,rgba(240,121,44,.2));
+    transform:scaleX(0);transform-origin:left center;box-shadow:0 0 12px rgba(240,121,44,.5)}
+  #gy-splash .gy-tag{font-family:"Inter",system-ui,sans-serif;font-size:10px;letter-spacing:5px;font-weight:600;
+    color:#83838d;text-transform:uppercase;opacity:0}
+  @media (prefers-reduced-motion:reduce){#gy-splash .gy-g,#gy-splash .gy-w,#gy-splash .gy-uline,#gy-splash .gy-tag{opacity:1!important;transform:none!important;filter:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<!-- silver gradient for the GRAMS mark (used by the post-login splash) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="gySilver" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d0d3d9"/><stop offset="1" stop-color="#93969d"/>
+  </linearGradient>
+</defs></svg>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script type="text/babel" src="js/app.jsx?v=19"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root{--bg-0:#06080d;--bg-1:#0c1017;--bg-2:#141a25;--bg-3:#1c2433;--bg-4:#242e40;--border:#1e293b;--t1:#f1f5f9;--t2:#94a3b8;--t3:#64748b;--t4:#475569;--accent:#6366f1;--accent-h:#818cf8;--accent-g:rgba(99,102,241,.12);--green:#10b981;--green-g:rgba(16,185,129,.12);--red:#ef4444;--red-g:rgba(239,68,68,.12);--amber:#f59e0b;--amber-g:rgba(245,158,11,.12);--cyan:#06b6d4;--r:14px;--rs:10px;--font:'Tajawal',system-ui,sans-serif;--safe-top:env(safe-area-inset-top,0);--safe-bottom:env(safe-area-inset-bottom,0)}
+[data-theme=light]{--bg-0:#f8fafc;--bg-1:#ffffff;--bg-2:#f1f5f9;--bg-3:#e2e8f0;--bg-4:#cbd5e1;--border:#e2e8f0;--t1:#0f172a;--t2:#475569;--t3:#64748b;--t4:#94a3b8;--accent-g:rgba(99,102,241,.08)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;height:100%;overflow:hidden}
+body{font-family:var(--font);background:var(--bg-0);color:var(--t1);height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
+#app{height:100%;display:flex;flex-direction:column;overflow:hidden}
+input,select,textarea,button{font-family:var(--font);font-size:14px}
+a{color:var(--accent-h);text-decoration:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+/* ── Layout ── */
+.pwa-shell{display:flex;flex-direction:column;height:100%;overflow:hidden}
+.pwa-header{padding:calc(var(--safe-top) + 12px) 16px 12px;background:var(--bg-1);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;z-index:50}
+.pwa-header-title{font-size:18px;font-weight:800}
+.pwa-header-sub{font-size:11px;color:var(--t3);margin-top:1px}
+.pwa-content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-bottom:calc(var(--safe-bottom) + 70px)}
+.pwa-tab-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg-1);border-top:1px solid var(--border);display:flex;padding:6px 0 calc(var(--safe-bottom) + 6px);z-index:50}
+.pwa-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;cursor:pointer;color:var(--t4);font-size:10px;font-weight:500;transition:color .15s;border:none;background:none}
+.pwa-tab.ac{color:var(--accent-h)}
+.pwa-tab svg,.pwa-tab .tab-icon{width:22px;height:22px;flex-shrink:0}
+.pwa-tab .tab-icon{font-size:20px;line-height:22px}
+
+/* ── Page ── */
+.pwa-page{padding:16px}
+.pwa-page-title{font-size:22px;font-weight:800;margin-bottom:4px}
+.pwa-page-sub{font-size:13px;color:var(--t3);margin-bottom:16px}
+
+/* ── Cards ── */
+.pwa-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.pwa-card-title{font-size:13px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+
+/* ── KPI Row ── */
+.pwa-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.pwa-kpi{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:14px;position:relative;overflow:hidden}
+.pwa-kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--kpi-c,var(--accent))}
+.pwa-kpi-label{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.3px;font-weight:600;margin-bottom:4px}
+.pwa-kpi-value{font-size:22px;font-weight:800}
+.pwa-kpi-sub{font-size:11px;color:var(--t4);margin-top:2px}
+
+/* ── Buttons ── */
+.pwa-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:var(--rs);font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all .15s;width:100%;font-family:var(--font)}
+.pwa-btn-primary{background:var(--accent);color:#fff}.pwa-btn-primary:hover{background:var(--accent-h)}
+.pwa-btn-success{background:var(--green);color:#fff}
+.pwa-btn-danger{background:var(--red);color:#fff}
+.pwa-btn-outline{background:transparent;color:var(--t1);border:1px solid var(--border)}
+.pwa-btn:disabled{opacity:.4;cursor:not-allowed}
+.pwa-btn-sm{padding:8px 14px;font-size:13px;width:auto}
+
+/* ── Inputs ── */
+.pwa-input{width:100%;padding:12px 16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--rs);color:var(--t1);font-size:15px;outline:none;transition:border .2s}
+.pwa-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-g)}
+.pwa-input::placeholder{color:var(--t4)}
+.pwa-label{display:block;font-size:12px;font-weight:600;color:var(--t3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px}
+.pwa-field{margin-bottom:16px}
+
+/* ── Badge ── */
+.pwa-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.pwa-badge-green{background:var(--green-g);color:#34d399}
+.pwa-badge-red{background:var(--red-g);color:#f87171}
+.pwa-badge-amber{background:var(--amber-g);color:#fbbf24}
+.pwa-badge-blue{background:rgba(99,102,241,.12);color:#818cf8}
+.pwa-badge-gray{background:rgba(148,163,184,.1);color:#94a3b8}
+
+/* ── List Items ── */
+.pwa-list-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.pwa-list-item:hover{background:rgba(255,255,255,.02)}
+.pwa-list-item:last-child{border-bottom:none}
+.pwa-list-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pwa-list-body{flex:1;min-width:0}
+.pwa-list-title{font-size:14px;font-weight:600}
+.pwa-list-sub{font-size:12px;color:var(--t3);margin-top:1px}
+.pwa-list-end{font-size:12px;color:var(--t3);text-align:end}
+
+/* ── QR Display ── */
+.pwa-qr-box{background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);padding:20px;text-align:center}
+.pwa-qr-code{width:180px;height:180px;margin:0 auto 12px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:11px;color:#000;word-break:break-all;padding:12px}
+.pwa-qr-label{font-size:13px;color:var(--t3)}
+
+/* ── Clock Button ── */
+.pwa-clock-hero{background:linear-gradient(135deg,var(--bg-3),var(--bg-2));border:1px solid var(--border);border-radius:18px;padding:28px 20px;text-align:center;margin-bottom:16px}
+.pwa-clock-time{font-size:42px;font-weight:800;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.pwa-clock-date{font-size:13px;color:var(--t3);margin-bottom:20px}
+.pwa-clock-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;border:none;transition:all .2s;font-family:var(--font)}
+.pwa-clock-btn-in{background:var(--green);color:#fff;box-shadow:0 0 30px rgba(16,185,129,.3)}
+.pwa-clock-btn-in:hover{box-shadow:0 0 40px rgba(16,185,129,.5);transform:scale(1.02)}
+.pwa-clock-btn-out{background:var(--amber);color:#fff;box-shadow:0 0 30px rgba(245,158,11,.3)}
+.pwa-clock-btn-disabled{background:var(--bg-4);color:var(--t4);cursor:not-allowed}
+
+/* ── Login ── */
+.pwa-login{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at 50% 20%,#1e1b4b 0%,var(--bg-0) 70%)}
+.pwa-login-box{width:100%;max-width:380px}
+.pwa-login-logo{text-align:center;margin-bottom:32px}
+.pwa-login-logo .logo-icon{font-size:48px;margin-bottom:8px}
+.pwa-login-logo h1{font-size:26px;font-weight:800}
+.pwa-login-logo p{color:var(--t3);font-size:13px;margin-top:4px}
+
+/* ── Empty ── */
+.pwa-empty{text-align:center;padding:40px 20px;color:var(--t4)}
+.pwa-empty-icon{font-size:40px;margin-bottom:12px}
+.pwa-empty h3{font-size:15px;color:var(--t3);margin-bottom:4px}
+
+/* ── Skeleton ── */
+.pwa-skel{background:linear-gradient(90deg,var(--bg-3) 25%,var(--bg-4) 50%,var(--bg-3) 75%);background-size:200% 100%;animation:skel 1.2s ease-in-out infinite;border-radius:var(--rs);height:16px;margin-bottom:8px}
+@keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ── Profile Avatar ── */
+.pwa-avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;flex-shrink:0}
+
+/* ── Settings Row ── */
+.pwa-setting{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border)}
+.pwa-setting:last-child{border-bottom:none}
+.pwa-setting-label{font-size:14px;font-weight:500}
+.pwa-setting-sub{font-size:11px;color:var(--t3)}
+.pwa-toggle{width:48px;height:26px;border-radius:13px;background:var(--bg-4);cursor:pointer;position:relative;border:none;transition:background .2s;flex-shrink:0}
+.pwa-toggle.on{background:var(--green)}
+.pwa-toggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s}
+.pwa-toggle.on::after{transform:translateX(22px)}
+[dir=rtl] .pwa-toggle.on::after{transform:translateX(-22px)}
+
+/* ── Spinner ── */
+.pwa-spinner{width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pwa-loading{display:flex;align-items:center;justify-content:center;padding:60px}
+
+/* ── Payslip ── */
+.pwa-slip{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:12px}
+.pwa-slip-head{padding:12px 16px;background:var(--bg-3);display:flex;justify-content:space-between;align-items:center}
+.pwa-slip-body{padding:14px 16px}
+.pwa-slip-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px}
+.pwa-slip-row.total{font-weight:800;font-size:15px;border-top:1px solid var(--border);padding-top:10px;margin-top:4px}
+.pwa-slip-row .red{color:var(--red)}.pwa-slip-row .green{color:var(--green)}
+
+/* ── Responsive ── */
+@media(min-width:600px){.pwa-content{max-width:480px;margin:0 auto}.pwa-login-box{max-width:400px}}

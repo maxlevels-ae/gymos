@@ -1,0 +1,15 @@
+{
+  "name": "engagement",
+  "version": "1.0.0",
+  "description": "Announcements, lifecycle messages, at-risk flags, retention dashboard",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["members"],
+  "permissions": ["engagement.view","engagement.manage","announcements.manage"],
+  "menu": [
+    { "label": "Engagement", "labelAr": "التواصل", "icon": "megaphone", "path": "/engagement", "order": 50, "permission": "engagement.view" }
+  ],
+  "widgets": [
+    { "id": "at-risk-members", "label": "At-Risk Members", "labelAr": "أعضاء معرضون", "type": "stat", "statKey": "atRiskMembers", "order": 11 }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "member-app",
+  "version": "1.0.0",
+  "description": "Member PWA backend: nutrition & meal plans, water & weight tracking, member notifications, gym capacity, and PWA management.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["members", "memberships", "attendance", "branches", "training"],
+  "permissions": [
+    "member_app.view",
+    "member_app.manage"
+  ],
+  "menu": [
+    {
+      "label": "Member App",
+      "labelAr": "تطبيق الأعضاء",
+      "icon": "smartphone",
+      "path": "/member-app",
+      "order": 26,
+      "permission": "member_app.view"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Runs the C3 access microservice. Merge these keys into your root
+# docker-compose.yml (alongside the ERP), or run standalone from this folder.
+#
+# The panel lives on the physical LAN, so the container needs host/LAN network
+# reach. On Linux the simplest reliable option is `network_mode: host` (then the
+# service listens on the host's 8081 and can hit 192.168.1.201:4370 directly).
+# On Docker Desktop (Win/Mac) host mode is limited — put the panel's subnet on a
+# macvlan network, or run the service directly on a LAN host instead.
+services:
+  c3-access:
+    build: ./services/c3-access      # adjust path if merged into the root compose
+    container_name: gymos-c3-access
+    restart: unless-stopped
+    env_file: ./services/c3-access/.env
+    # Linux + panel on the host LAN:
+    network_mode: host
+    # If NOT using host networking, expose the port instead and use a macvlan net:
+    # ports: ["8081:8081"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; urllib.request.urlopen('http://127.0.0.1:8081/health'); "]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,0 +1,60 @@
+{
+  "name": "membership-freeze",
+  "version": "1.0.0",
+  "description": "Dedicated freeze management with rules, pricing, payment workflow, and history",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["members", "memberships"],
+  "permissions": [
+    "freeze.view",
+    "freeze.create",
+    "freeze.manage",
+    "freeze.settings"
+  ],
+  "menu": [
+    {
+      "label": "Freeze Mgmt",
+      "labelAr": "إدارة التجميد",
+      "icon": "snowflake",
+      "path": "/freeze",
+      "order": 22,
+      "permission": "freeze.view"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "active-freezes",
+      "label": "Active Freezes",
+      "labelAr": "تجميد نشط",
+      "type": "stat",
+      "statKey": "activeFreezes",
+      "order": 14
+    },
+    {
+      "id": "freeze-revenue",
+      "label": "Freeze Revenue",
+      "labelAr": "إيرادات التجميد",
+      "type": "stat",
+      "statKey": "freezeRevenue",
+      "order": 15,
+      "format": "currency"
+    }
+  ],
+  "profileTabs": [
+    {
+      "id": "freezes",
+      "label": "Freezes",
+      "labelAr": "التجميد",
+      "order": 6
+    }
+  ],
+  "quickActions": [
+    {
+      "id": "freeze-membership",
+      "label": "Freeze",
+      "labelAr": "تجميد",
+      "icon": "snowflake",
+      "action": "freezeMembership"
+    }
+  ]
+}

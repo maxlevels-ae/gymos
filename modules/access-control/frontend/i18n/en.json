@@ -1,0 +1,31 @@
+{
+  "accessControl": {
+    "moduleLoaded": "Access Control loaded",
+    "dashboard": "Dashboard",
+    "identities": "Identities",
+    "enrollment": "Enrollment",
+    "liveVerify": "Live Verify",
+    "linkMembers": "Link Members",
+    "eventsLog": "Events Log",
+    "devices": "Devices",
+    "settings": "Settings",
+    "bridgeOnline": "Online",
+    "bridgeOffline": "Offline",
+    "newIdentity": "New Identity",
+    "enrollFingerprint": "Enroll Fingerprint",
+    "verifyAndOpen": "Verify & Open Gate",
+    "mergeAndSave": "Merge & Save",
+    "captureScan": "Capture Scan",
+    "scanOf": "Scan {n} of 3",
+    "allScansCollected": "All 3 scans collected — ready to merge",
+    "placeFinger": "Place finger on reader",
+    "accessGranted": "Access granted",
+    "accessDenied": "Access denied",
+    "noMatch": "No fingerprint match found",
+    "attendanceLogged": "Attendance logged automatically",
+    "identityCreated": "Access identity created",
+    "fingerprintEnrolled": "Fingerprint enrolled successfully",
+    "settingsSaved": "Settings saved",
+    "deviceAdded": "Device added"
+  }
+}

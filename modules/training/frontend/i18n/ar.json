@@ -1,0 +1,16 @@
+{
+  "training": {
+    "loaded": "تم تحميل التدريب",
+    "dashboard": "لوحة التحكم",
+    "categories": "الأقسام",
+    "exercises": "التمارين",
+    "programs": "البرامج",
+    "onboard": "تسجيل عضو",
+    "members": "الأعضاء المسجلون",
+    "beginner": "مبتدئ",
+    "intermediate": "متوسط",
+    "expert": "متقدم",
+    "onboardSuccess": "تم التسجيل في التدريب!",
+    "autoAssigned": "تم تعيين البرنامج تلقائياً حسب مستوى الخبرة"
+  }
+}

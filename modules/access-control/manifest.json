@@ -1,0 +1,152 @@
+{
+  "name": "access-control",
+  "version": "2.0.0",
+  "description": "GymOS Access Control V2 — Odoo-style workspace. Face-recognition entry: a face terminal (Wiegand) identifies the member and the ZKTeco C3-100 panel opens the door, showing the member card popup. Also supports rotating-QR access. Member ↔ Face ID mapping, turnstile log, debt policy.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": [
+    "members",
+    "memberships",
+    "attendance",
+    "branches"
+  ],
+  "permissions": [
+    "access-control.view",
+    "access-control.manage",
+    "access-control.enroll",
+    "access-control.verify",
+    "access-control.devices.manage",
+    "access-control.settings.manage"
+  ],
+  "menu": [
+    {
+      "label": "Access Control",
+      "labelAr": "التحكم بالدخول",
+      "icon": "shield",
+      "path": "/access-control",
+      "order": 27,
+      "permission": "access-control.view"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "access-control-events-today",
+      "label": "Access Events Today",
+      "labelAr": "أحداث الدخول اليوم",
+      "type": "stat",
+      "statKey": "accessControlEventsToday",
+      "order": 44
+    },
+    {
+      "id": "access-control-success-rate",
+      "label": "Access Success Rate",
+      "labelAr": "نسبة نجاح الدخول",
+      "type": "stat",
+      "statKey": "accessControlSuccessRate",
+      "order": 45
+    }
+  ],
+  "profileTabs": [
+    {
+      "id": "access-control",
+      "label": "Access Control",
+      "labelAr": "التحكم بالدخول",
+      "order": 7
+    }
+  ],
+  "settingsSections": [
+    {
+      "id": "access-control-settings",
+      "tab": "modules",
+      "title": "Access Control / Fingerprint",
+      "titleAr": "التحكم بالدخول / البصمة",
+      "description": "ZK4500 bridge, C3-100 door panel, score threshold, and attendance rules.",
+      "descriptionAr": "جسر ZK4500، لوحة الباب C3-100، حد المطابقة، وقواعد الحضور.",
+      "order": 180,
+      "fields": [
+        {
+          "key": "bridge_url",
+          "storageKey": "access_control.bridge_url",
+          "type": "text",
+          "label": "ZK4500 Bridge URL",
+          "labelAr": "رابط جسر ZK4500"
+        },
+        {
+          "key": "score_threshold",
+          "storageKey": "access_control.score_threshold",
+          "type": "text",
+          "label": "Score Threshold",
+          "labelAr": "حد المطابقة"
+        },
+        {
+          "key": "gate_provider",
+          "storageKey": "access_control.gate_provider",
+          "type": "select",
+          "label": "Gate Provider",
+          "labelAr": "مزود فتح البوابة",
+          "options": [
+            { "value": "mock", "label": "Mock", "labelAr": "تجريبي" },
+            { "value": "c3-100", "label": "ZKTeco C3-100 (TCP)", "labelAr": "C3-100 (TCP مباشر)" },
+            { "value": "webhook", "label": "Webhook", "labelAr": "ويب هوك" }
+          ]
+        },
+        {
+          "key": "c3_panel_ip",
+          "storageKey": "access_control.c3_panel_ip",
+          "type": "text",
+          "label": "C3-100 Panel IP",
+          "labelAr": "عنوان IP للوحة C3-100"
+        },
+        {
+          "key": "c3_panel_port",
+          "storageKey": "access_control.c3_panel_port",
+          "type": "text",
+          "label": "C3-100 TCP Port",
+          "labelAr": "منفذ TCP للوحة C3-100"
+        },
+        {
+          "key": "c3_door_number",
+          "storageKey": "access_control.c3_door_number",
+          "type": "text",
+          "label": "C3-100 Door Number",
+          "labelAr": "رقم الباب C3-100"
+        },
+        {
+          "key": "c3_open_duration",
+          "storageKey": "access_control.c3_open_duration",
+          "type": "text",
+          "label": "C3-100 Open Duration (sec)",
+          "labelAr": "مدة الفتح C3-100 (ثوان)"
+        },
+        {
+          "key": "c3_password",
+          "storageKey": "access_control.c3_password",
+          "type": "text",
+          "label": "C3-100 Password",
+          "labelAr": "كلمة مرور C3-100"
+        },
+        {
+          "key": "gate_open_url",
+          "storageKey": "access_control.gate_open_url",
+          "type": "text",
+          "label": "Webhook Gate Open URL",
+          "labelAr": "رابط فتح البوابة (ويب هوك)"
+        },
+        {
+          "key": "gate_secret",
+          "storageKey": "access_control.gate_secret",
+          "type": "text",
+          "label": "Webhook Gate Secret",
+          "labelAr": "سر البوابة (ويب هوك)"
+        },
+        {
+          "key": "allow_member_checkin",
+          "storageKey": "access_control.allow_member_checkin",
+          "type": "toggle",
+          "label": "Create Attendance on Success",
+          "labelAr": "إنشاء حضور عند النجاح"
+        }
+      ]
+    }
+  ]
+}

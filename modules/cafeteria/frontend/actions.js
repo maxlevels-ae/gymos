@@ -1,0 +1,1 @@
+GymOS.registerQuickAction({ id:'open-cafeteria-pos', module:'cafeteria', label:'Open Cafeteria POS', labelAr:'فتح نقطة بيع الكافتيريا', icon:'coffee', action:'openCafeteriaPOS', path:'/cafeteria-pos', order:20 });

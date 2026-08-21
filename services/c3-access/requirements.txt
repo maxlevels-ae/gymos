@@ -1,0 +1,15 @@
+# ── ZKTeco C3-100 access-control microservice ──
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+sse-starlette==2.2.1
+python-dotenv==1.0.1
+
+# Pure-TCP C3 protocol client (no Windows DLL). Verify the installed API
+# against the repo before live use: https://pypi.org/project/zkaccess-c3/
+zkaccess-c3==1.1.1
+
+# tests
+pytest==8.3.4
+httpx==0.28.1

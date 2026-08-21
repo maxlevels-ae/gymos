@@ -1,0 +1,27 @@
+{
+  "name": "sdk-example",
+  "version": "1.0.0",
+  "description": "SDK Example: Proves the module system works",
+  "author": "GymOS SDK",
+  "core": false,
+  "dependencies": [],
+  "permissions": [
+    "sdk_example.view",
+    "sdk_example.create",
+    "sdk_example.edit",
+    "sdk_example.delete"
+  ],
+  "menu": [
+    {
+      "label": "Sdk Example",
+      "labelAr": "",
+      "icon": "package",
+      "path": "/sdk-example",
+      "order": 50,
+      "permission": "sdk_example.view"
+    }
+  ],
+  "widgets": [],
+  "profileTabs": [],
+  "quickActions": []
+}

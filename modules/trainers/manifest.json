@@ -1,0 +1,15 @@
+{
+  "name": "trainers",
+  "version": "2.0.0",
+  "description": "Trainer profiles and member assignment",
+  "author": "GymOS Core",
+  "core": true,
+  "dependencies": ["branches"],
+  "permissions": ["trainers.view","trainers.create","trainers.edit","trainers.delete"],
+  "menu": [
+    { "label": "Trainers", "labelAr": "المدربين", "icon": "dumbbell", "path": "/trainers", "order": 40, "permission": "trainers.view" }
+  ],
+  "widgets": [
+    { "id": "trainers-count", "label": "Active Trainers", "labelAr": "المدربين", "type": "stat", "statKey": "activeTrainers", "order": 12 }
+  ]
+}

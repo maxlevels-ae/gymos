@@ -1,0 +1,179 @@
+{
+  "name": "cafeteria",
+  "version": "1.0.8",
+  "description": "Cafeteria Management V4 with enforced POS sessions, walk-in customer default, improved POS UX, held-order resume, last-order refund control, and super-admin POS safeguards.",
+  "author": "OpenAI",
+  "core": false,
+  "dependencies": [
+    "members",
+    "branches"
+  ],
+  "permissions": [
+    "cafeteria.view",
+    "cafeteria.manage_products",
+    "cafeteria.manage_categories",
+    "cafeteria.manage_warehouses",
+    "cafeteria.manage_inventory",
+    "cafeteria.pos.open_session",
+    "cafeteria.pos.close_session",
+    "cafeteria.pos.sell",
+    "cafeteria.pos.refund",
+    "cafeteria.pos.discount",
+    "cafeteria.pos.void",
+    "cafeteria.reports.view",
+    "cafeteria.settings.manage"
+  ],
+  "menu": [
+    {
+      "label": "Cafeteria",
+      "labelAr": "الكافتيريا",
+      "icon": "coffee",
+      "path": "/cafeteria",
+      "order": 60,
+      "permission": "cafeteria.view"
+    },
+    {
+      "label": "Cafeteria POS",
+      "labelAr": "نقطة البيع",
+      "icon": "receipt",
+      "path": "/cafeteria-pos",
+      "order": 61,
+      "permission": "cafeteria.pos.sell"
+    },
+    {
+      "label": "Cafeteria Products",
+      "labelAr": "منتجات الكافتيريا",
+      "icon": "package",
+      "path": "/cafeteria-products",
+      "order": 62,
+      "permission": "cafeteria.manage_products"
+    },
+    {
+      "label": "Cafeteria Stock",
+      "labelAr": "مخزون الكافتيريا",
+      "icon": "boxes",
+      "path": "/cafeteria-stock",
+      "order": 63,
+      "permission": "cafeteria.manage_inventory"
+    },
+    {
+      "label": "Cafeteria Sessions",
+      "labelAr": "جلسات نقطة البيع",
+      "icon": "wallet",
+      "path": "/cafeteria-sessions",
+      "order": 64,
+      "permission": "cafeteria.pos.open_session"
+    },
+    {
+      "label": "Cafeteria Reports",
+      "labelAr": "تقارير الكافتيريا",
+      "icon": "bar-chart-3",
+      "path": "/cafeteria-reports",
+      "order": 65,
+      "permission": "cafeteria.reports.view"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "cafeteria-sales-today",
+      "label": "Cafeteria Sales Today",
+      "labelAr": "مبيعات الكافتيريا اليوم",
+      "type": "stat",
+      "statKey": "cafeteriaSalesToday",
+      "order": 31,
+      "format": "currency"
+    },
+    {
+      "id": "cafeteria-open-sessions",
+      "label": "Open Cafeteria Sessions",
+      "labelAr": "جلسات الكافتيريا المفتوحة",
+      "type": "stat",
+      "statKey": "cafeteriaOpenSessions",
+      "order": 32
+    },
+    {
+      "id": "cafeteria-low-stock",
+      "label": "Low Stock Products",
+      "labelAr": "منتجات منخفضة المخزون",
+      "type": "stat",
+      "statKey": "cafeteriaLowStock",
+      "order": 33
+    }
+  ],
+  "quickActions": [
+    {
+      "id": "open-cafeteria-pos",
+      "label": "Open Cafeteria POS",
+      "labelAr": "فتح نقطة بيع الكافتيريا",
+      "icon": "coffee",
+      "action": "openCafeteriaPOS"
+    }
+  ],
+  "settingsSections": [
+    {
+      "id": "cafeteria-general",
+      "tab": "modules",
+      "title": "Cafeteria POS Policy",
+      "titleAr": "سياسات نقطة بيع الكافتيريا",
+      "description": "Warehouse, session, refund and payment controls.",
+      "descriptionAr": "إعدادات المستودع والجلسات والاسترجاع وطرق الدفع.",
+      "order": 160,
+      "fields": [
+        {
+          "key": "cafeteria.default_warehouse_id",
+          "type": "text",
+          "label": "Default Warehouse ID",
+          "labelAr": "معرف المستودع الافتراضي"
+        },
+        {
+          "key": "cafeteria.allow_negative_stock",
+          "type": "toggle",
+          "label": "Allow Negative Stock",
+          "labelAr": "السماح بمخزون سالب"
+        },
+        {
+          "key": "cafeteria.allow_sale_without_session",
+          "type": "toggle",
+          "label": "Allow Sale Without Session",
+          "labelAr": "السماح بالبيع بدون جلسة"
+        },
+        {
+          "key": "cafeteria.allow_overpayment",
+          "type": "toggle",
+          "label": "Allow Overpayment",
+          "labelAr": "السماح بالمبلغ الزائد"
+        },
+        {
+          "key": "cafeteria.refund_approval_threshold",
+          "type": "text",
+          "label": "Refund Approval Threshold",
+          "labelAr": "حد موافقة الاسترجاع"
+        },
+        {
+          "key": "cafeteria.low_stock_threshold",
+          "type": "text",
+          "label": "Default Low Stock Threshold",
+          "labelAr": "حد التنبيه الافتراضي للمخزون"
+        },
+        {
+          "key": "cafeteria.enabled_payment_methods",
+          "type": "text",
+          "label": "Enabled Payment Methods (JSON)",
+          "labelAr": "طرق الدفع المفعلة (JSON)"
+        },
+        {
+          "key": "cafeteria.receipt_footer",
+          "type": "text",
+          "label": "Receipt Footer",
+          "labelAr": "تذييل الإيصال"
+        },
+        {
+          "key": "cafeteria.super_admin_pos_password",
+          "type": "text",
+          "label": "Super Admin POS Password",
+          "labelAr": "كلمة مرور سوبر أدمن نقطة البيع"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "accessControl": {
+    "moduleLoaded": "تم تحميل وحدة التحكم بالدخول",
+    "dashboard": "لوحة التحكم",
+    "identities": "الهويات",
+    "enrollment": "تسجيل البصمة",
+    "liveVerify": "التحقق الحي",
+    "linkMembers": "ربط الأعضاء",
+    "eventsLog": "سجل الأحداث",
+    "devices": "الأجهزة",
+    "settings": "الإعدادات",
+    "bridgeOnline": "متصل",
+    "bridgeOffline": "غير متصل",
+    "newIdentity": "هوية جديدة",
+    "enrollFingerprint": "تسجيل بصمة",
+    "verifyAndOpen": "تحقق وافتح البوابة",
+    "mergeAndSave": "دمج وحفظ",
+    "captureScan": "التقاط قراءة",
+    "scanOf": "القراءة {n} من 3",
+    "allScansCollected": "تم جمع 3 قراءات — جاهز للدمج",
+    "placeFinger": "ضع الإصبع على القارئ",
+    "accessGranted": "تم السماح بالدخول",
+    "accessDenied": "تم رفض الدخول",
+    "noMatch": "لم يتم العثور على تطابق",
+    "attendanceLogged": "تم تسجيل الحضور تلقائياً",
+    "identityCreated": "تم إنشاء هوية الدخول",
+    "fingerprintEnrolled": "تم حفظ البصمة بنجاح",
+    "settingsSaved": "تم حفظ الإعدادات",
+    "deviceAdded": "تم إضافة الجهاز"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "hr",
+  "version": "2.0.0",
+  "description": "GymOS HR V2 — Odoo-style workspace with top header navigation. Single entry point.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["branches"],
+  "permissions": [
+    "hr.dashboard", "hr.employee.view", "hr.employee.create", "hr.employee.edit",
+    "hr.employee.delete", "hr.department.manage", "hr.attendance.manage",
+    "hr.leave.manage", "hr.contract.manage", "hr.payroll.view", "hr.recruitment.manage",
+    "hr.settings.manage"
+  ],
+  "menu": [
+    {
+      "label": "HR",
+      "labelAr": "الموارد البشرية",
+      "icon": "users",
+      "path": "/hr",
+      "order": 60,
+      "permission": "hr.dashboard"
+    }
+  ],
+  "widgets": [
+    { "id": "hr-employees",     "label": "Employees",      "labelAr": "الموظفون",          "type": "stat", "statKey": "hrEmployees",     "order": 70 },
+    { "id": "hr-leaves-pending","label": "Pending Leaves", "labelAr": "الإجازات المعلقة", "type": "stat", "statKey": "hrPendingLeaves", "order": 71 },
+    { "id": "hr-present",       "label": "Present Today",  "labelAr": "الحاضرون اليوم",   "type": "stat", "statKey": "hrPresentToday",  "order": 72 }
+  ],
+  "settingsSections": [
+    {
+      "id": "hr-general-settings",
+      "tab": "modules",
+      "title": "HR Configuration",
+      "titleAr": "إعدادات الموارد البشرية",
+      "description": "Odoo-style HR behavior, numbering, approvals, payroll cycle, and onboarding defaults.",
+      "descriptionAr": "سلوك الموارد البشرية على نمط أودو بما يشمل الترقيم والموافقات ودورة الرواتب.",
+      "order": 120,
+      "fields": [
+        { "key": "hr.employee_prefix",       "type": "text",   "label": "Employee Number Prefix",    "labelAr": "بادئة رقم الموظف"          },
+        { "key": "hr.default_probation_days", "type": "text",   "label": "Default Probation Days",    "labelAr": "أيام التجربة الافتراضية"   },
+        { "key": "hr.leave_requires_approval","type": "toggle", "label": "Leave Requires Approval",   "labelAr": "الإجازات تتطلب موافقة"     },
+        { "key": "hr.payroll_cycle",          "type": "select", "label": "Payroll Cycle",             "labelAr": "دورة الرواتب",
+          "options": [{"value":"monthly","label":"Monthly"},{"value":"biweekly","label":"Biweekly"},{"value":"weekly","label":"Weekly"}] },
+        { "key": "hr.default_work_days",      "type": "text",   "label": "Default Work Days / Week",  "labelAr": "أيام العمل الافتراضية"     },
+        { "key": "hr.auto_create_contract",   "type": "toggle", "label": "Auto-create Draft Contract","labelAr": "إنشاء عقد مسودة تلقائياً" }
+      ]
+    }
+  ]
+}

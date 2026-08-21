@@ -1,0 +1,16 @@
+{
+  "training": {
+    "loaded": "Training loaded",
+    "dashboard": "Dashboard",
+    "categories": "Categories",
+    "exercises": "Exercises",
+    "programs": "Programs",
+    "onboard": "Onboard Member",
+    "members": "Enrolled Members",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "expert": "Expert",
+    "onboardSuccess": "Training onboarded!",
+    "autoAssigned": "Program auto-assigned based on experience level"
+  }
+}

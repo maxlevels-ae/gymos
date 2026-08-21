@@ -1,0 +1,75 @@
+{
+  "name": "accounting",
+  "version": "2.0.0",
+  "description": "GymOS Accounting V2 — Odoo-style accounting workspace with top header navigation adapted for gym business operations.",
+  "author": "GymOS",
+  "core": false,
+  "dependencies": ["branches"],
+  "permissions": [
+    "accounting.view",
+    "accounting.manage_settings",
+    "accounting.manage_accounts",
+    "accounting.manage_journals",
+    "accounting.manage_entries",
+    "accounting.manage_invoices",
+    "accounting.manage_bills",
+    "accounting.manage_payments",
+    "accounting.view_reports"
+  ],
+  "menu": [
+    {
+      "label": "Accounting",
+      "labelAr": "المحاسبة",
+      "icon": "calculator",
+      "path": "/accounting",
+      "order": 70,
+      "permission": "accounting.view"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "accounting-open-receivables",
+      "label": "Open Receivables",
+      "labelAr": "الذمم المدينة المفتوحة",
+      "type": "stat",
+      "statKey": "accountingOpenReceivables",
+      "order": 34,
+      "format": "currency"
+    },
+    {
+      "id": "accounting-open-payables",
+      "label": "Open Payables",
+      "labelAr": "الذمم الدائنة المفتوحة",
+      "type": "stat",
+      "statKey": "accountingOpenPayables",
+      "order": 35,
+      "format": "currency"
+    },
+    {
+      "id": "accounting-monthly-revenue",
+      "label": "Monthly Revenue",
+      "labelAr": "إيراد الشهر",
+      "type": "stat",
+      "statKey": "accountingMonthlyRevenue",
+      "order": 36,
+      "format": "currency"
+    }
+  ],
+  "settingsSections": [
+    {
+      "id": "accounting-general",
+      "tab": "modules",
+      "title": "Accounting Settings",
+      "titleAr": "إعدادات المحاسبة",
+      "description": "Core accounting defaults, localization, and integrations.",
+      "descriptionAr": "إعدادات المحاسبة الأساسية والتوطين والتكاملات.",
+      "order": 170,
+      "fields": [
+        { "key": "accounting.default_currency", "type": "text", "label": "Default Currency", "labelAr": "العملة الافتراضية" },
+        { "key": "accounting.fiscal_year_start", "type": "text", "label": "Fiscal Year Start", "labelAr": "بداية السنة المالية" },
+        { "key": "accounting.localization_country", "type": "text", "label": "Localization Country", "labelAr": "دولة التوطين" },
+        { "key": "accounting.include_cafeteria", "type": "toggle", "label": "Include Cafeteria in Accounting", "labelAr": "شمول الكافتيريا في المحاسبة" }
+      ]
+    }
+  ]
+}

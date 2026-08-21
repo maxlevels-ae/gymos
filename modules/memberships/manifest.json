@@ -1,0 +1,21 @@
+{
+  "name": "memberships",
+  "version": "2.0.0",
+  "description": "Plans, subscriptions, trials, freeze rules, renewals, and smart status engine",
+  "author": "GymOS Core",
+  "core": true,
+  "dependencies": ["members"],
+  "permissions": ["memberships.view","memberships.create","memberships.edit","memberships.delete","plans.manage"],
+  "menu": [
+    { "label": "Memberships", "labelAr": "الاشتراكات", "icon": "credit-card", "path": "/memberships", "order": 20, "permission": "memberships.view" },
+    { "label": "Plans", "labelAr": "الباقات", "icon": "package", "path": "/plans", "order": 21, "permission": "plans.manage" }
+  ],
+  "widgets": [
+    { "id": "active-memberships", "label": "Active Subs", "labelAr": "نشط", "type": "stat", "statKey": "activeMemberships", "order": 4 },
+    { "id": "expiring-soon", "label": "Expiring Soon", "labelAr": "تنتهي قريباً", "type": "stat", "statKey": "expiringSoon", "order": 5 },
+    { "id": "revenue-month", "label": "Revenue (Month)", "labelAr": "الإيراد", "type": "stat", "statKey": "revenueThisMonth", "order": 6, "format": "currency" }
+  ],
+  "profileTabs": [
+    { "id": "memberships", "label": "Memberships", "labelAr": "الاشتراكات", "order": 2 }
+  ]
+}

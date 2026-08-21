@@ -1,0 +1,13 @@
+{
+  "name": "branches",
+  "version": "2.0.0",
+  "description": "Branch/Location management for multi-location gyms",
+  "author": "GymOS Core",
+  "core": true,
+  "dependencies": [],
+  "permissions": ["branches.view","branches.create","branches.edit","branches.delete"],
+  "menu": [
+    { "label": "Branches", "labelAr": "الفروع", "icon": "building", "path": "/branches", "order": 90, "permission": "branches.view" }
+  ],
+  "widgets": []
+}

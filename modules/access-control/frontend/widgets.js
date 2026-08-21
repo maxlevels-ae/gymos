@@ -1,0 +1,2 @@
+GymOS.registerWidget({ id:'access-control-events-today', module:'access-control', label:'Access Events Today', labelAr:'أحداث الدخول اليوم', type:'stat', statKey:'accessControlEventsToday', order:44 });
+GymOS.registerWidget({ id:'access-control-success-rate', module:'access-control', label:'Access Success Rate', labelAr:'نسبة نجاح الدخول', type:'stat', statKey:'accessControlSuccessRate', order:45 });
