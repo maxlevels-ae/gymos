@@ -3,6 +3,32 @@
   "version": "1.0.0",
   "description": "Modular Gym Management ERP Platform",
   "main": "cpanel-app.js",
+  "license": "GPL-3.0-or-later",
+  "author": "Maxlevels — Eng. Ahmad Alkharouf",
+  "homepage": "https://github.com/maxlevels-ae/gymos#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxlevels-ae/gymos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxlevels-ae/gymos/issues"
+  },
+  "keywords": [
+    "gym",
+    "erp",
+    "gym-management",
+    "fitness",
+    "membership",
+    "attendance",
+    "pwa",
+    "express",
+    "sqlite",
+    "modular"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",

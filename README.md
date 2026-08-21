@@ -6,12 +6,13 @@ Ships with an admin web app plus two installable PWAs (members and staff), bilin
 
 - **Version:** 1.0.0 · [Release notes](https://github.com/maxlevels-ae/gymos/releases/tag/v1.0.0)
 - **Stack:** Node.js 18+ · Express 4 · SQLite (via `sql.js`) · vanilla JS front end
-- **License:** proprietary — all rights reserved
+- **License:** [GPL-3.0-or-later](LICENSE) — free and open source
 
 ---
 
 ## Table of contents
 
+- [Features](#features)
 - [Requirements](#requirements)
 - [Install](#install)
 - [First login](#first-login)
@@ -23,6 +24,67 @@ Ships with an admin web app plus two installable PWAs (members and staff), bilin
 - [Writing a module](#writing-a-module)
 - [Backups](#backups)
 - [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Custom work and support](#custom-work-and-support)
+
+---
+
+## Features
+
+### Members and memberships
+- Member registration with full profiles, lifecycle stages, and profile-completeness scoring
+- Per-member QR identity for check-in and door access
+- Membership plans covering periods, session packs, trials, and drop-ins
+- Subscriptions with renewals, auto-renew, and a smart status engine
+- Dedicated freeze management — rules, freeze pricing, payment workflow, and full history
+- At-risk flags and retention dashboards
+- Emergency contacts and per-member alerts
+
+### Attendance and access control
+- QR check-in plus a dedicated front-desk mode
+- Live occupancy tracking and attendance heatmaps
+- Face-recognition entry via a Wiegand face terminal driving a ZKTeco C3-100 door panel, with a member-card popup on entry
+- Rotating-QR access as an alternative to face entry
+- Member ↔ Face ID mapping, turnstile log, and debt-based entry policy
+- Fingerprint reader support through the bundled Windows bridge
+
+### Scheduling and training
+- Class scheduling with capacity management, bookings, and waitlists
+- Personal-training appointments and trainer-to-member assignment
+- Trainer profiles and specializations
+- Exercise library with videos and images, organized by category
+- Training programs auto-assigned from member experience level, with progress tracking
+
+### Operations and finance
+- Accounting workspace built for gym business operations
+- Purchase orders end to end — RFQ, PO confirmation, goods receipt, and vendor bill creation
+- Cafeteria POS with enforced till sessions, walk-in default, held-order resume, refund control, and super-admin safeguards
+- HR workspace for staff records
+- Multi-branch and multi-location support throughout
+
+### Engagement, marketing, and automation
+- Rule-based workflow automation — expiry reminders, inactivity nudges, birthdays, weekly reports
+- Delivery over WhatsApp, SMS, or in-app notification
+- WhatsApp campaigns via Wesender, with templates, contact lists, and a safe processing queue
+- Announcements and lifecycle messaging
+- QR self-registration queue with two-stage WhatsApp onboarding and admin approval
+
+### Apps
+- **Admin back-office** — the full management console
+- **Member PWA** — installable app with OTP phone login, QR identity, bookings, membership status, nutrition and meal plans, water and weight tracking, and live gym capacity
+- **Employee PWA** — installable app for staff working the floor
+- Web push notifications to both PWAs
+
+### Platform
+- Modular architecture — 19 modules discovered and loaded at boot, each with its own migrations, routes, permissions, menus, and dashboard widgets
+- Runtime module installation by uploading a `.zip` from the admin UI
+- Role-based access control with granular per-module permissions
+- Event bus for cross-module communication, plus rules, workflow, and notification-template engines
+- Bilingual English/Arabic throughout, with RTL support
+- Audit logging and a configurable settings system
+- Security: JWT auth with refresh tokens, bcrypt hashing, helmet, CORS allowlisting, rate limiting on login and OTP, and Zod request validation
+- Zero-dependency database — a single SQLite file, with automatic periodic backups
+- Runs on cPanel shared hosting or any Node host
 
 ---
 
@@ -294,3 +356,39 @@ Neither `data/uploads/` nor `data/backups/` is tracked in git.
 **Database changes do not survive a restart** — `data/` must be writable, and the process needs a clean shutdown to flush. Stop with `Ctrl+C` or `SIGTERM`, not `SIGKILL`.
 
 **Start fresh** — stop the app, delete `data/gym.db`, restart. Migrations and the default admin are recreated from scratch. This destroys all data.
+
+---
+
+## License
+
+GymOS is free and open source software, licensed under the **GNU General Public License v3.0 or later**. The full text is in [LICENSE](LICENSE).
+
+```
+Copyright (C) 2026  Maxlevels — Eng. Ahmad Alkharouf
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
+
+In short: you are free to use, run, study, modify, and redistribute it, including commercially. If you distribute a modified version — or run it as a service you distribute — you must release your changes under the same GPL-3.0 license and keep the copyright notice intact.
+
+---
+
+## Custom work and support
+
+Need custom modules, integrations, branding, migration from another system, or hosted setup?
+
+**Eng. Ahmad Alkharouf — Maxlevels**
+WhatsApp: [+962 79 308 8001](https://wa.me/962793088001)
+
+Bug reports and feature requests are welcome in [GitHub Issues](https://github.com/maxlevels-ae/gymos/issues).
