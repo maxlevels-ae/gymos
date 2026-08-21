@@ -337,7 +337,7 @@ The database is a single file. The platform writes periodic copies into `data/ba
 cp data/gym.db "backup-$(date +%F).db"
 ```
 
-Neither `data/uploads/` nor `data/backups/` is tracked in git.
+Nothing under `data/` is tracked in git — not the database, not uploads, not backups. Your gym's data never enters the repository.
 
 ---
 

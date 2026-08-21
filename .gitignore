@@ -6,7 +6,11 @@ node_modules/
 .env.local
 .env.*.local
 
-# Runtime data (uploads, backups) — gym.db is tracked intentionally
+# Runtime data — never commit the live database or member uploads
+data/gym.db
+data/*.db
+data/*.db-journal
+data/*.db-wal
 data/uploads/
 data/backups/
 tmp/
